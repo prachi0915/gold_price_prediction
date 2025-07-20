@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gold Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gold Price Prediction</h1>
+        <form method="POST" action="/predict">
+            <input type="number" name="SPX" step="any" placeholder="S&P 500 Index (SPX)" required>
+            <input type="number" name="USO" step="any" placeholder="Oil Price (USO)" required>
+            <input type="number" name="SLV" step="any" placeholder="Silver Price (SLV)" required>
+            <input type="number" name="EUR/USD" step="any" placeholder="EUR/USD Rate" required>
+            <button type="submit">Predict</button>
+        </form>
+        <h2>{{ prediction_text }}</h2>
+    </div>
+</body>
+</html>
