@@ -19,6 +19,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 
+# Evaluate the model
+
+score = model.score(X_test, y_test)
+print(f"Model R^2 score: {score:.2f}")
+
+
 # Save the model
 with open("gold_model.pkl", "wb") as f:
     pickle.dump(model, f)
